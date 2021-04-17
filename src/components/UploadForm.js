@@ -1,11 +1,13 @@
 import { AllInclusiveRounded, MergeTypeSharp } from '@material-ui/icons';
 import {React , useState } from 'react';
+import ProgressBar from './ProgressBar'
 
 function UploadForm() {
 
     const [data,setData] = useState(null);
+  
 
-     const types= ['image/png','image.jpg'];
+     const types= ['image/png','image/jpeg'];
 
      const [error,setError] = useState(null);
 
@@ -34,16 +36,12 @@ function UploadForm() {
 
     return (
         <div className="form">
-            
-         
                  <input type="file" onChange={changeHandler}/>
                  <div className="output">
                  {error && <div className="error">{ error }</div>}
                  {data && <div className="rror">{ data.name }</div>}
+                 {data && <ProgressBar  data={data} setData={setData}/>}
                  </div>
-   
-              
-            
         </div>
     )
 }
