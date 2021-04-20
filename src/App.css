@@ -9,15 +9,17 @@
 
 .header {
   background: #100f10;
-  border: 1px solid #8739f9;
+
+  /* border: 1px solid #8739f9; */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: -1px 3px 8px 4px rgba(135, 57, 249, 0.83);
 }
 
 .app-name {
   width: 80%;
+  margin-top: 1.2rem;
+  /* background: red; */
   margin-left: 1.5rem;
   color: #fff;
   font-family: Brush Script MT, Brush Script Std, cursive;
@@ -28,10 +30,12 @@
   gap: 1rem;
 }
 .logo-icon {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .title {
   width: 100%;
+  /* margin-top: 1rem; */
+  padding-top: 1rem;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -41,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  background: #fff;
 }
 
 .title p {
@@ -49,9 +54,86 @@
 }
 
 .form {
-  max-width: 100%;
-  padding: 5rem;
-  /* background-color: red; */
+  width: 100%;
+  height: 20vh;
+  margin-top: 3rem;
   display: grid;
   place-items: center;
+  /* background: black; */
+}
+.output {
+  width: 80%;
+  /* background: red; */
+}
+
+.progress-bar {
+  height: 5px;
+  background: #8739f9;
+  margin-top: 2rem;
+}
+.photo-grid {
+  max-width: 78%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  /* background: red; */
+}
+.img-wrap {
+  width: 90%;
+  height: 15rem;
+  /* background: green; */
+}
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.add-image-icon {
+  fill: #8739f9;
+  color: #8739f9;
+  transform: scale(1.8);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.add-image-icon:hover {
+  fill: #8739f9;
+  color: #8739f9;
+  transform: scale(2);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .title p {
+    font-size: 1rem;
+  }
+  .photo-grid {
+    max-width: 85%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0.1rem;
+    grid-row-gap: 1rem;
+    /* background: red; */
+  }
+
+  .img-wrap {
+    width: 95%;
+    height: 8rem;
+  }
 }

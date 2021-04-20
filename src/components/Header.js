@@ -9,10 +9,13 @@ function Header() {
                 <PermMediaIcon className="logo-icon" />  
                 <h2>Pic's<span> - </span>Up</h2>  
             </div>
-            <div className="title">
-                <h3>The internet’s source of freely-usable images</h3> 
-                <p># Contribute with quality contents</p>
-            </div>
+            <span>
+                <div className="title">
+                    <h3>The internet’s source of freely-usable images</h3> 
+                    <p># Contribute with quality contents</p>
+                </div>
+            </span>
+            
             
     </div>
     )

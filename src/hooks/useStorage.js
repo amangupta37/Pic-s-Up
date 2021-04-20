@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import projectStorage   from 'firebase';
+import { projectStorage, projectFirestore, timestamp } from '../firebase/config';
 
 /* 
 
@@ -30,14 +30,15 @@ const useStorage = (data) => {
 
         const storageRef = projectStorage.ref(data.name); //path at which file will be uploaded
          
-
+        const collectionRef = projectFirestore.collection('images');
             //put() method will upload the file in the above reference (path)
             storageRef.put(data).on('state_changed' , 
         
                         //1 . function for tracking and giving  % of data uploaded on db
                         (snap) =>{
-                            let percentage =(snap.byteTransfered/ snap.totalBytes) * 100;
-                            setProgress(percentage);
+                               let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+
+                               setProgress(percentage);
                         } ,
 
                          // 2. function for returning if any errro occured while uploading file (like image other than png or jpg selected)
@@ -47,8 +48,13 @@ const useStorage = (data) => {
 
                         // 3. this fun will trigger when file is completely uploaded 
                         // this fun will return the uploded image url for displaying the stored image on web page
-                        async ( ) =>{
-                            const url = await storageRef.getDownaldURL();
+                        async () =>{
+                            const url = await storageRef.getDownloadURL();
+                            const createdUrl = timestamp();
+                            collectionRef.add({
+                                imageUrl :url,
+                                urlcreated : createdUrl
+                            })
                             setUrl(url);
                         }
 
