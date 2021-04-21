@@ -11,7 +11,7 @@ function Header() {
             </div>
             <span>
                 <div className="title">
-                    <h3>The internet’s source of freely-usable images</h3> 
+                    <h3>The internet’s source of freely usable images</h3> 
                     <p># Contribute with quality contents</p>
                 </div>
             </span>

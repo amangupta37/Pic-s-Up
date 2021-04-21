@@ -161,7 +161,14 @@ label input {
   .app-name {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 100;
   }
+  .logo-icon {
+    margin-top: 0.7rem;
+  }
+
   .title p {
     font-size: 1rem;
   }
