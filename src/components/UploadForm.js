@@ -1,8 +1,6 @@
 import { React, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
 
 function UploadForm() {
   const [data, setData] = useState(null);
@@ -40,14 +38,11 @@ function UploadForm() {
       </form>
       <div className="output">
         {error && <div className="error">{error}</div>}
-        {data && <div className="rror">{data.name}</div>}
+        {data && <div className="msg">{data.name}</div>}
         {data && <ProgressBar data={data} setData={setData} />}
       </div>
 
-      <FormControlLabel
-        control={<Switch color="primary" />}
-        
-      />
+      
     </div>
   );
 }

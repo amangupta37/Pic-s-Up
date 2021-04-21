@@ -13,7 +13,7 @@ function App() {
         <Header />
         <UploadForm / >
         <ImageGrid  setImage={setImage} />
-        <Modal  image={image} />
+        {image && <Modal  image={image} setImage={setImage} /> }
    </div>
   );
 }
